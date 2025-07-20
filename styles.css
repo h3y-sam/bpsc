@@ -1,0 +1,1034 @@
+:root {
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --secondary: #10b981;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --gray-light: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Typography */
+:root {
+  font-size: 16px;
+  line-height: 1.6;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0f9ff 100%);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  text-rendering: optimizeLegibility;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, #ffffff 50%, rgba(255,255,255,0.2) 100%);
+}
+
+.syllabus-content h4 {
+  color: #2c5364;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+.syllabus-content ul, .syllabus-content ol {
+  margin-bottom: 0.7em;
+  margin-top: 0.2em;
+}
+.syllabus-content table {
+  margin: 1em 0;
+  font-size: 1em;
+}
+.syllabus-content th, .syllabus-content td {
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .syllabus-content table, .syllabus-content th, .syllabus-content td {
+    font-size: 0.95em;
+  }
+} 
+h1 {
+  font-family: 'Poppins', 'Baloo 2', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Main Navigation */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1.2rem 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+/* Dropdown Navigation */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  z-index: 10;
+}
+
+.nav-dropbtn {
+  background: linear-gradient(90deg, #2c5364 60%, #203a43 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2c536450;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 180px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-dropbtn::after {
+  content: '▼';
+  font-size: 0.6em;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.nav-dropdown.active .nav-dropbtn::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropbtn:hover, 
+.nav-dropbtn:focus,
+.nav-dropbtn:focus-visible {
+  background: #203a43;
+  color: #ffd700;
+  transform: translateY(-2px);
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  box-shadow: 0 4px 12px #2c536470;
+}
+
+.nav-dropdown-content {
+  position: absolute;
+  background-color: #fff;
+  min-width: 240px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 8px;
+  border: 1px solid #e2e8f0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.nav-dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-content a {
+  color: #2d3748;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-dropdown-content a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--primary);
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-content a:hover::before,
+.nav-dropdown-content a:focus::before {
+  transform: scaleY(1);
+}
+
+.nav-dropdown-content a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.nav-dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-content a:hover,
+.nav-dropdown-content a:focus {
+  background-color: #f8fafc;
+  color: #2563eb;
+  padding-left: 1.5rem;
+}
+
+.nav-dropdown-content a:active {
+  background-color: #f1f5f9;
+  transition: none;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-dropbtn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.8rem 1.25rem;
+  }
+
+  .nav-dropdown-content {
+    position: static;
+    width: 100%;
+    margin-top: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .nav-dropdown-content.show {
+    display: block;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .main-nav.collapsed .nav-dropdown-content {
+    display: none !important;
+  }
+}
+
+/* Animation for dropdown items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-dropdown-content a {
+  animation: slideIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.nav-dropdown-content a:nth-child(1) { animation-delay: 0.05s; }
+.nav-dropdown-content a:nth-child(2) { animation-delay: 0.1s; }
+.nav-dropdown-content a:nth-child(3) { animation-delay: 0.15s; }
+.nav-dropdown-content a:nth-child(4) { animation-delay: 0.2s; }
+.nav-dropdown-content a:nth-child(5) { animation-delay: 0.25s; }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+  
+  .nav-dropdown {
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .nav-dropbtn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .nav-dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    margin-top: -5px;
+  }
+  
+  .nav-dropdown-content a {
+    padding: 10px 16px;
+  }
+}
+.container {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  max-width: 1200px;
+  margin: -2rem auto 3rem;
+  padding: 2.5rem;
+  min-height: 60vh;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto 2rem;
+    border-radius: 0;
+    padding: 1.5rem;
+  }
+}
+.section-title {
+  color: var(--primary-dark);
+  font-family: 'Poppins', 'Baloo 2', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-light);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+ul.material-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.material-list li {
+  background: #f0f4fa;
+  border: 1px solid #d3e7ff;
+  border-radius: 8px;
+  margin: 0.6rem 0;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 1px 4px #2c536420;
+}
+ul.material-list li:hover {
+  background: #e0eafc;
+  box-shadow: 0 4px 12px #2c536420;
+}
+ul.material-list a {
+  color: #203a43;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+ul.material-list a:hover {
+  color: #0f2027;
+  text-decoration: underline;
+}
+
+/* PYQ Section Styles */
+.year-section {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.year-section:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gray-light), transparent);
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.year-section:last-child {
+  margin-bottom: 1rem;
+}
+
+.year-section {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px #2c536410;
+  border: 1px solid #e0eafc;
+}
+
+.year-section h3 {
+  color: #2c5364;
+  font-size: 1.15rem;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0eafc;
+  font-family: 'Baloo 2', cursive;
+}
+
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .paper-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.paper-card {
+  background: white;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paper-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.paper-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--primary);
+  transition: height 0.3s ease;
+}
+
+.paper-card:hover::before {
+  height: 100%;
+}
+
+.paper-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 1.25rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary-dark);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.download-btn:hover::before {
+  width: 100%;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .paper-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .year-section {
+    padding: 1rem;
+  }
+  
+  .paper-card {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .paper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4rem;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0.7rem 0.3rem;
+    margin: 1rem 0.2rem;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 1.05rem;
+  }
+  nav {
+    gap: 0.5rem;
+  }
+  nav button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* PDF Viewer Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* PDF Viewer Loading and Error States */
+.pdf-viewer-container {
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pdf-viewer-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.modal.loading .pdf-viewer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  border-radius: 0 0 12px 12px;
+}
+
+.modal.loading .pdf-loading {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-loading,
+.pdf-error {
+  display: none;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.pdf-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fef2f2;
+  border-radius: 8px;
+  padding: 2rem;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-error p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.pdf-error .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pdf-error .btn:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-error .btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pdf-viewer-container {
+    min-height: 300px;
+  }
+  
+  .pdf-error {
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+  border-radius: 4px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #1f2937;
+  background-color: #f3f4f6;
+}
+
+.modal-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-viewer-container {
+  flex: 1;
+  min-height: 60vh;
+  position: relative;
+  background: #f9f9f9;
+}
+
+#pdfViewer {
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+  border: none;
+  background: white;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+  gap: 0.5rem;
+}
+
+.btn .btn-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.download-btn {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.download-btn:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.close-btn {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.close-btn:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+/* PDF Card Buttons */
+.pdf-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pdf-buttons .btn {
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* View PDF Button */
+.view-pdf-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  color: white;
+  border: 1px solid #4338ca;
+}
+
+.view-pdf-btn:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.view-pdf-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+.view-pdf-btn .btn-icon {
+  font-size: 1.1em;
+  transition: transform 0.2s ease;
+}
+
+.view-pdf-btn:hover .btn-icon {
+  transform: scale(1.1);
+}
+
+/* Download PDF Button */
+.download-pdf-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 1px solid #059669;
+}
+
+.download-pdf-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.download-pdf-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.download-pdf-btn .btn-icon {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.download-pdf-btn:hover .btn-icon {
+  animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+/* Button focus states */
+.pdf-buttons .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .pdf-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .pdf-buttons .btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}

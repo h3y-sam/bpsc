@@ -1,1 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comprehensive BPSC study material including notes, previous year papers, and study resources.">
+  <meta name="theme-color" content="#4f46e5">
+  <title>BPSC Study Material | Comprehensive Exam Preparation</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/books.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <script src="index.js" defer></script>
+
+</head>
+
+<body>
+  <header>
+    <h1>📝 BPSC Study Material</h1>
+    <p>सभी विषयों के लिए नोट्स, PYQ, और गाइड</p>
+  </header>
+  <nav class="main-nav">
+    <div class="nav-dropdown">
+      <button class="nav-dropbtn">📚 Study Material</button>
+      <div class="nav-dropdown-content">
+        <a href="#" onclick="showSection('notes')">Notes</a>
+        <a href="#" onclick="showSection('pyq')">Previous Year Questions</a>
+        <a href="#" onclick="showSection('books')">Recommended Books</a>
+        <a href="#" onclick="showSection('current')">Current Affairs</a>
+        <a href="#" onclick="showSection('syllabus')">Syllabus</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropbtn">📖 Study Resources</button>
+      <div class="nav-dropdown-content">
+        <a href="#" onclick="showSection('visionias')">VISIONIAS Modules</a>
+        <a href="#" onclick="showSection('udaan')">ONLYIAS UDAAN</a>
+        <a href="#" onclick="showSection('drishti')">Drishti ClassNotes</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <!-- Add this block inside your <div class="container">, after the other sections -->
+    <div id="syllabus-section" class="section" style="display:none;">
+      <div class="section-title">📘 BPSC Combined Competitive Exam (CCE) 2025 – Syllabus</div>
+      <div class="syllabus-content">
+        <b>Stages:</b>
+        <ol>
+          <li>Preliminary Examination (Objective)</li>
+          <li>Main Examination (Descriptive)</li>
+          <li>Interview (Personality Test)</li>
+        </ol>
+        <hr>
+        <h4>📝 1. Preliminary Examination Syllabus</h4>
+        <ul>
+          <li><b>Total Questions:</b> 150</li>
+          <li><b>Total Marks:</b> 150</li>
+          <li><b>Duration:</b> 2 Hours</li>
+          <li><b>Type:</b> Objective (MCQ)</li>
+          <li><b>Negative Marking:</b> ❌ No</li>
+        </ul>
+        <b>Subjects Covered:</b>
+        <ul>
+          <li>भारत और बिहार का इतिहास</li>
+          <li>भारत और बिहार का भूगोल</li>
+          <li>भारतीय राजव्यवस्था और शासन व्यवस्था</li>
+          <li>राष्ट्रीय और अंतरराष्ट्रीय महत्व की घटनाएं</li>
+          <li>आर्थिक और सामाजिक विकास</li>
+          <li>सामान्य मानसिक योग्यता</li>
+          <li>सामान्य विज्ञान</li>
+        </ul>
+        <hr>
+        <h4>📄 2. Main Examination Syllabus</h4>
+        <ul>
+          <li><b>Type:</b> Descriptive</li>
+          <li><b>Total Papers:</b> 4</li>
+          <li><b>Total Marks:</b> 1000</li>
+          <li><b>Each Paper Duration:</b> 3 Hours</li>
+        </ul>
+        <b>Paper-wise Breakdown:</b>
+        <ul>
+          <li>
+            <b>Paper 1: सामान्य हिंदी (General Hindi)</b> – 100 Marks (Qualifying Only)
+            <ul>
+              <li>व्याकरण</li>
+              <li>निबंध लेखन</li>
+              <li>वाक्य संरचना</li>
+              <li>अपठित गद्यांश</li>
+            </ul>
+          </li>
+          <li>
+            <b>Paper 2: General Studies – I</b> – 300 Marks
+            <ul>
+              <li>भारतीय स्वतंत्रता संग्राम</li>
+              <li>भारतीय संस्कृति</li>
+              <li>आधुनिक भारत का इतिहास</li>
+              <li>भारतीय अर्थव्यवस्था</li>
+            </ul>
+          </li>
+          <li>
+            <b>Paper 3: General Studies – II</b> – 300 Marks
+            <ul>
+              <li>अंतर्राष्ट्रीय संबंध</li>
+              <li>सामाजिक विकास</li>
+              <li>भारतीय राजव्यवस्था</li>
+              <li>विज्ञान और प्रौद्योगिकी</li>
+              <li>पर्यावरण और पारिस्थितिकी</li>
+            </ul>
+          </li>
+          <li>
+            <b>Paper 4: वैकल्पिक विषय (Optional Subject)</b> – 300 Marks<br>
+            <span style="font-size:0.97em;">(BPSC द्वारा निर्धारित सूची से चुनना होता है।)</span>
+          </li>
+        </ul>
+        <hr>
+        <h4>🎤 3. Interview / साक्षात्कार</h4>
+        <ul>
+          <li><b>Marks:</b> 120</li>
+          <li><b>Duration:</b> 30–35 Minutes</li>
+          <li><b>मूल्यांकन बिंदु:</b>
+            <ul>
+              <li>सामान्य जागरूकता</li>
+              <li>नेतृत्व क्षमता</li>
+              <li>नैतिकता और व्यवहार कौशल</li>
+              <li>प्रशासनिक दृष्टिकोण</li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
+        <h4>🧮 Exam Pattern Summary</h4>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="background:#e0eafc;">
+            <th style="padding:6px;border:1px solid #ccc;">Stage</th>
+            <th style="padding:6px;border:1px solid #ccc;">Total Marks</th>
+            <th style="padding:6px;border:1px solid #ccc;">Duration</th>
+          </tr>
+          <tr>
+            <td style="padding:6px;border:1px solid #ccc;">Prelims</td>
+            <td style="padding:6px;border:1px solid #ccc;">150</td>
+            <td style="padding:6px;border:1px solid #ccc;">2 Hours</td>
+          </tr>
+          <tr>
+            <td style="padding:6px;border:1px solid #ccc;">Mains</td>
+            <td style="padding:6px;border:1px solid #ccc;">1000</td>
+            <td style="padding:6px;border:1px solid #ccc;">3 Hours/Paper</td>
+          </tr>
+          <tr>
+            <td style="padding:6px;border:1px solid #ccc;">Interview</td>
+            <td style="padding:6px;border:1px solid #ccc;">120</td>
+            <td style="padding:6px;border:1px solid #ccc;">30–35 Minutes</td>
+          </tr>
+        </table>
+        <hr>
+        <h4>✅ Tips for Preparation</h4>
+        <ul>
+          <li>सिलेबस को गहराई से समझें</li>
+          <li>पिछले 5 वर्षों के प्रश्नपत्र हल करें</li>
+          <li>वैकल्पिक विषय सोच-समझकर चुनें</li>
+          <li>सोशल मीडिया से दूरी बनाए रखें</li>
+          <li>नियमित अभ्यास और रिवीजन करें</li>
+        </ul>
+      </div>
+    </div>
+    <div id="notes-section" class="section">
+      <div class="section-title">📚 Notes</div>
+      <ul class="material-list">
+        <li><a href="#">Indian Polity Handwritten Notes</a></li>
+        <li><a href="#">Geography Short Notes</a></li>
+        <li><a href="#">History Summary Notes</a></li>
+      </ul>
+    </div>
+    <div id="pyq-section" class="section" style="display:none;">
+      <div class="section-title">📝 BPSC Previous Year Papers</div>
+
+      <div class="year-section">
+        <h3>🔹 Latest BPSC Papers</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">BPSC 70th Re-Exam Question Paper (2024)</div>
+            <a href="https://www.adda247.com/jobs/wp-content/uploads/sites/4/2024/12/04175526/70th-BPSC-Re-Exam-Question-Paper-English_compressed.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 69th Mains GS Paper 1 (2024)</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2024/01/06182117/69th-BPSC-Mains-G.S-Paper-1-1.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 BPSC Previous Year Papers (English)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">BPSC Previous Year Papers (Set 1)</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2024/01/08150345/5_6105014476157750386-1.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC Previous Year Papers (Set 2)</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04145005/eng.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC GS Paper 1</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04145007/gs1.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC GS Paper 2</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04145010/gs2.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 BPSC Mains Papers</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">BPSC 65th Mains Paper</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04162451/65M.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 65th Mains GS Paper 1</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04162448/65m-gs1.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 64th Mains Paper</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04163020/64m.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 BPSC GS Papers (64th & 65th)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">BPSC 65th GS Paper 1</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04161349/65.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 65th GS Paper 2</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04162445/65-gs2.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 64th GS Paper</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04161346/64.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 64th GS Paper 1</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04163016/64-gs1.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC 64th GS Paper 2</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04163018/64gs2.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 BPSC Additional Papers</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">BPSC Previous Year Papers (Hindi)</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04145013/hindi.pdf"
+              class="download-btn" target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC Paper A</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04155931/A.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC Paper B</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04155934/B.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">BPSC Paper D</div>
+            <a href="https://www.studyiq.com/articles/wp-content/uploads/2023/07/04155936/d.pdf" class="download-btn"
+              target="_blank">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="visionias-section" class="section" style="display:none;">
+      <div class="section-title">📚 VISIONIAS हिंदी माध्यम मॉड्यूल</div>
+
+      <div class="year-section">
+        <h3>🔹 भारतीय राजव्यवस्था एवं शासन</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Polity And Governance part 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Polity and governance part 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था भाग 3</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Polity and Governance part 3.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था भाग 4</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Polity and governnce part 4.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">शासन (Governance)</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/govrnance.pdf" class="download-btn" target="_blank">डाउनलोड
+              करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 भूगोल</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भूगोल भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Geography part 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भूगोल भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Geography part 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भूगोल भाग 3</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Geography part 3.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भूगोल भाग 4</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Geography Part 4.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 इतिहास</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">आधुनिक इतिहास भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Modern history part 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">आधुनिक इतिहास भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/modern history part 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">स्वतंत्रता के बाद का भारत</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/India After Independence.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">कला एवं संस्कृति भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Art and Culture part 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">कला एवं संस्कृति भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Art n culture part 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 अर्थव्यवस्था एवं सामाजिक विकास</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय अर्थव्यवस्था भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Economy part 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय अर्थव्यवस्था भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Economy part 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय अर्थव्यवस्था भाग 3</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Economy part 3.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय समाज भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Society 1.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय समाज भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Indian Society 2.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">सामाजिक न्याय</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Social Justice.pdf" class="download-btn" target="_blank">डाउनलोड
+              करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 विज्ञान एवं प्रौद्योगिकी एवं नीतिशास्त्र</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">विज्ञान एवं प्रौद्योगिकी</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Science and technology.pdf" class="download-btn"
+              target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">नीतिशास्त्र भाग 1</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Ethics part 1.pdf" class="download-btn" target="_blank">डाउनलोड
+              करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">नीतिशास्त्र भाग 2</div>
+            <a href="pdf/Vision IAS Module HIndi Medium/Ethics part 2.pdf" class="download-btn" target="_blank">डाउनलोड
+              करें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="udaan-section" class="section" style="display:none;">
+      <div class="section-title">🚀 ONLYIAS UDAAN Revision Series</div>
+      
+      <div class="year-section">
+        <h3>🔹 इतिहास (History)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">प्राचीन भारत का इतिहास</div>
+            <a href="pdf/ONLYIAS/OnlyIAS_उड़ान_प्राचीन_इतिहास_Udaan_Ancient_History_Hindi.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">मध्यकालीन भारत</div>
+            <a href="pdf/ONLYIAS/UDAAN_उड़ान_मध्यकालीन_भारत.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">आधुनिक भारत</div>
+            <a href="pdf/ONLYIAS/UDAAN Modern History Hindi Medium.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">कला एवं संस्कृति</div>
+            <a href="pdf/ONLYIAS/OnlyIAS UDAAN कला एवं संस्कृति.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 भूगोल (Geography)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भूगोल</div>
+            <a href="pdf/ONLYIAS/OnlyIAS UDAAN Geography भूगोल.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 अर्थव्यवस्था एवं पर्यावरण</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय अर्थव्यवस्था</div>
+            <a href="pdf/ONLYIAS/OnlyIAS_Udaan_भारतीय_अर्थव्यवस्था_Latest.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">पर्यावरण और पारिस्थितिकी</div>
+            <a href="pdf/ONLYIAS/OnlyIAS_उड़ान_पर्यावरण_और_पारिस्थितकी.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 विज्ञान एवं प्रौद्योगिकी</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">विज्ञान और प्रौद्योगिकी</div>
+            <a href="pdf/ONLYIAS/OnlyIAS_Udaan_उड़ान_विज्ञान_और_प्रौद्योगिकी.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 राजव्यवस्था (Polity)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था</div>
+            <a href="pdf/ONLYIAS/उड़ान_भारतीय_राजव्यवस्था.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="books-section" class="section" style="display:none;">
+      <div class="section-title">📖 Recommended Books</div>
+      <ul class="material-list">
+        <li><a href="#">Spectrum Modern History</a></li>
+        <li><a href="#">NCERT Geography 11-12</a></li>
+      </ul>
+    </div>
+    <div id="drishti-section" class="section" style="display:none;">
+      <div class="section-title">📚 Drishti ClassNotes</div>
+      
+      <div class="year-section">
+        <h3>🔹 इतिहास (History)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">प्राचीन एवं मध्यकालीन इतिहास</div>
+            <a href="pdf/Drishti - ClassNotes/1_प्राचीन_एवं_मध्यकालीन_इतिहास_Class_Notes.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">आधुनिक इतिहास</div>
+            <a href="pdf/Drishti - ClassNotes/2_आधुनिक_इतिहास_Drishti_Class_Notes.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">विश्व इतिहास</div>
+            <a href="pdf/Drishti - ClassNotes/3_विश्व_इतिहास_DRISHTI_CLASS_NOTES_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">कला एवं संस्कृति</div>
+            <a href="pdf/Drishti - ClassNotes/4_कला_एवं_संस्कृति_DRISHTI_CLASS_NOTES.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 भूगोल (Geography)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारत का भूगोल</div>
+            <a href="pdf/Drishti - ClassNotes/7.) भारत का भूगोल (CLASS NOTES)_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भूगोल मानचित्र</div>
+            <a href="pdf/Drishti - ClassNotes/8_भूगोल_मानचित्र_CLASS_NOTES_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">विश्व भूगोल</div>
+            <a href="pdf/Drishti - ClassNotes/9.) विश्व भूगोल (CLASS NOTES)_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 राजव्यवस्था एवं शासन (Polity & Governance)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय राजव्यवस्था</div>
+            <a href="pdf/Drishti - ClassNotes/5_भारतीय_राजव्यवस्था_CLASS_NOTES_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">सुशासन</div>
+            <a href="pdf/Drishti - ClassNotes/11.) सुशासन (Drishti Class Notes).pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 अर्थव्यवस्था (Economy)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">भारतीय अर्थशास्त्र</div>
+            <a href="pdf/Drishti - ClassNotes/10_भारतीय_अर्थशास्त्र_CLASS_NOTES.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 विज्ञान एवं प्रौद्योगिकी (Science & Technology)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">सामान्य विज्ञान</div>
+            <a href="pdf/Drishti - ClassNotes/12_सामान्य_विज्ञान_CLASS_NOTES_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">विज्ञान एवं प्रौद्योगिकी भाग 1</div>
+            <a href="pdf/Drishti - ClassNotes/14_विज्ञान_एवं_प्रौद्योगिकी_PART_1_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">विज्ञान एवं प्रौद्योगिकी भाग 2</div>
+            <a href="pdf/Drishti - ClassNotes/15_विज्ञान_एवं_प्रौद्योगिकी_PART_2_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 नीतिशास्त्र एवं निबंध (Ethics & Essay)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">नीतिशास्त्र भाग 1</div>
+            <a href="pdf/Drishti - ClassNotes/16.) नीतिशास्त्र ( PART-1)_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">नीतिशास्त्र भाग 2</div>
+            <a href="pdf/Drishti - ClassNotes/17_नीतिशास्त्र_PART_2_78582_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">निबंध</div>
+            <a href="pdf/Drishti - ClassNotes/20.) निबंध (CLASS NOTES) 78585_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 सामाजिक एवं पर्यावरण (Social & Environment)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">पर्यावरण</div>
+            <a href="pdf/Drishti - ClassNotes/21.) पर्यावरण  (Class Notes) 78587_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">भारतीय समाज</div>
+            <a href="pdf/Drishti - ClassNotes/22_भारतीय_समाज_CLASS_NOTES_78588_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">सामाजिक न्याय</div>
+            <a href="pdf/Drishti - ClassNotes/23_समाजिक_न्याय_Class_Notes_78589_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h3>🔹 सुरक्षा एवं अन्य (Security & Others)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-title">आन्तरिक सुरक्षा</div>
+            <a href="pdf/Drishti - ClassNotes/18_आन्तरिक_सुरक्षा_Class_Notes_78583_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">आपदा प्रबंधन</div>
+            <a href="pdf/Drishti - ClassNotes/19_आपदा_प्रबंधन_Class_Notes_78584_unlocked.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title">सामान्य हिंदी</div>
+            <a href="pdf/Drishti - ClassNotes/13.) सामान्य हिंदी (Class Notes)_1.pdf" class="download-btn" target="_blank">डाउनलोड करें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="current-section" class="section" style="display:none;">
+      <div class="section-title">📰 Current Affairs</div>
+      <ul class="material-list">
+        <li><a href="#">June 2025 Monthly Magazine</a></li>
+        <li><a href="#">Important Schemes 2025</a></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    © 2025 | Developed for BPSC Aspirants
+  </footer>
+
+  <!-- PDF Viewer Modal -->
+  <div id="pdfViewerModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="pdfTitle">PDF Viewer</h3>
+        <button class="close-btn" id="closePdfViewer">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="pdf-viewer-container">
+          <div class="pdf-loading">Loading PDF...</div>
+          <div id="pdfViewerError" class="pdf-error"></div>
+          <iframe id="pdfViewer" frameborder="0"></iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="downloadPdfBtn" class="btn download-btn" download>
+          <span class="btn-icon">⬇️</span> Download PDF
+        </a>
+        <button class="btn close-btn" id="closePdfViewerBtn">
+          <span class="btn-icon">✕</span> Close
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
